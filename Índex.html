@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acessar Canal</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0a;
+      --surface: #141414;
+      --border: #222;
+      --accent: #29B6F6;
+      --accent2: #00E5FF;
+      --text: #f0f0f0;
+      --muted: #666;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      overflow: hidden;
+    }
+
+    /* Fundo atmosférico */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(41,182,246,0.12) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px 32px 36px;
+      max-width: 380px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 0 0 1px rgba(41,182,246,0.08), 0 32px 80px rgba(0,0,0,0.6);
+    }
+
+    .icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #1c8cdc, #29B6F6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      box-shadow: 0 8px 32px rgba(41,182,246,0.35);
+    }
+
+    .icon svg {
+      width: 34px;
+      height: 34px;
+      fill: white;
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px 20px;
+      background: linear-gradient(135deg, #1c8cdc, var(--accent2));
+      color: #000;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity 0.15s, transform 0.15s;
+      letter-spacing: -0.01em;
+    }
+
+    .btn:active {
+      opacity: 0.85;
+      transform: scale(0.98);
+    }
+
+    .btn svg {
+      width: 20px;
+      height: 20px;
+      fill: #000;
+      flex-shrink: 0;
+    }
+
+    .note {
+      margin-top: 18px;
+      font-size: 0.75rem;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    .note span {
+      color: #555;
+    }
+
+    /* Animação de entrada */
+    .card {
+      animation: fadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .pulse {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 8px 32px rgba(41,182,246,0.35); }
+      50%       { box-shadow: 0 8px 48px rgba(41,182,246,0.6); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <div class="icon pulse">
+    <!-- Telegram icon -->
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.504-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+    </svg>
+  </div>
+
+  <h1>Acesse o canal agora</h1>
+  <p>Toque no botão abaixo para abrir o Telegram no seu navegador e entrar no canal.</p>
+
+  <a class="btn" id="openBtn" href="#">
+    <svg viewBox="0 0 24 24">
+      <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.504-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+    </svg>
+    Abrir no Telegram
+  </a>
+
+  <p class="note">Será aberto no seu navegador padrão. <span>Não precisa de conta para acessar.</span></p>
+</div>
+
+<script>
+  const TARGET = 'https://t.me/ALICE_NOGUEIRA_OFICIAL_BOT';
+  const btn = document.getElementById('openBtn');
+
+  function isAndroid() {
+    return /android/i.test(navigator.userAgent);
+  }
+
+  function isIOS() {
+    return /iphone|ipad|ipod/i.test(navigator.userAgent);
+  }
+
+  function isTikTokWebView() {
+    return /musical_ly|tiktok/i.test(navigator.userAgent);
+  }
+
+  function openExternal() {
+    if (isTikTokWebView()) {
+      if (isAndroid()) {
+        // Intent URL força abertura no Chrome/navegador padrão no Android
+        const intentUrl = 'intent://' + TARGET.replace('https://', '') +
+          '#Intent;scheme=https;package=com.android.chrome;end';
+        window.location.href = intentUrl;
+
+        // Fallback: se o intent não funcionar em 1.5s, tenta abrir direto
+        setTimeout(function () {
+          window.location.href = TARGET;
+        }, 1500);
+
+      } else if (isIOS()) {
+        // No iOS dentro do TikTok, a única saída confiável é instrução manual
+        // mas tentamos abrir mesmo assim
+        window.location.href = TARGET;
+      } else {
+        window.location.href = TARGET;
+      }
+    } else {
+      // Fora do TikTok: abre normalmente
+      window.open(TARGET, '_blank', 'noopener,noreferrer');
+    }
+  }
+
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
+    openExternal();
+  });
+</script>
+
+</body>
+</html>
